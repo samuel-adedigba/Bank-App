@@ -59,7 +59,7 @@ const App: React.FC = () => {
       {/* The loading={null} prop can be replaced with a spinner or some loading indicator while the state is being restored. */}
       <Router>
           {/* {isAuthenticated && <NavBar />} */}
-          <div className={`${isAuthenticated ? "ml-64" : ""} p-4`}>
+          <div className="p-4">
             <AppRoutes />
           </div>
         </Router>

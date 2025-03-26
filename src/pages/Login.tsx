@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { GoChevronLeft } from "react-icons/go";
 import redirectConfig from "../routes/redirectConfig";
 
-
  interface User {
         email: string,
         password: string
@@ -56,7 +55,7 @@ const Login = () =>{
             <p className="text-lg text-[#8e8e8e] mt-2">Hello there, sign in to continue</p>
              <div className="w-full mx-auto rounded-full flex items-center justify-center p-6 ">
               <img
-                src="src/assets/sign-in.png"
+                src="sign-in.png"
                 alt="lock icon"
                 className=""
               />
@@ -123,7 +122,7 @@ const Login = () =>{
           <div className="mt-6 flex flex-col items-center">
             <div className="rounded-full flex items-center justify-center shadow-lg">
               <img
-                src="src/assets/fingerprint.png"
+                src="/fingerprint.png"
                 alt="fingerprint icon"
                 className="w-12 h-12"
               />

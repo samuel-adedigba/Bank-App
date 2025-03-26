@@ -105,7 +105,7 @@ const Register = () => {
               Hello there, create New account
             </p>
             <div className="w-full mx-auto rounded-full flex items-center justify-center p-6 ">
-              <img src="src/assets/register.png" alt="lock icon" className="" />
+              <img src="/register.png" alt="lock icon" className="" />
             </div>
           </div>
           <Formik

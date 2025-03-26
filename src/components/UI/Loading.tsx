@@ -1,3 +1,4 @@
+// Loading.tsx
 import React from "react";
 
 type LoadingProps = {

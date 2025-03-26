@@ -11,9 +11,9 @@ interface ListProps {
 
 const List: React.FC<ListProps> = ({ title, data, className, renderItem }) => {
   return (
-    <div className={`p-4 ${className}`}>
+    <div className={`p-2 ${className}`}>
       <h1 className="text-2xl font-semibold mb-4">{title}</h1>
-      <div className="grid w-fit py-2 rounded-3xl bg-white shadow-md">
+      <div className="grid w-f py-2 rounded-3xl bg-white shadow-md">
         {data.map((item, index) => (
           <Card key={index} className="rounded-lg">
             {renderItem(item)}

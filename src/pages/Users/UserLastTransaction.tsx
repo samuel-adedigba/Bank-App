@@ -1,92 +1,70 @@
 import React from "react";
-import List from "../../components/UI/List";
+
+const transactions = [
+  {
+    icon: "/spotify_icon.png",
+    bgColor: "bg-[#E7FAF5]",
+    title: "Spotify Subscription",
+    date: "25 Jan 2021",
+    category: "Shopping",
+    card: "1234 ****",
+    status: "Pending",
+    value: "-$150",
+    valueColor: "text-[#FE5C73]",
+  },
+  {
+    icon: "/settings_icon.png",
+    bgColor: "bg-[#EEF4FF]",
+    title: "Mobile Service",
+    date: "25 Jan 2021",
+    category: "Service",
+    card: "1234 ****",
+    status: "Completed",
+    value: "-$340",
+    valueColor: "text-[#FE5C73]",
+  },
+  {
+    icon: "/profile_icon.png",
+    bgColor: "bg-[#FDECEF]",
+    title: "Emilly Wilson",
+    date: "25 Jan 2021",
+    category: "Transfer",
+    card: "1234 ****",
+    status: "Completed",
+    value: "+$780",
+    valueColor: "text-[#16DBAA]",
+  },
+];
 
 const UserLastTransaction = () => {
-  const lastTransactions = [
-    {
-      icon: "../src/assets/spotify_icon.png",
-      title: "Amazon Purchase",
-      date: "Jan 12, 2024",
-      value: "$50.00",
-      status: "Completed",
-      atm: "123*********",
-      remark: "Shopping",
-    },
-    {
-      icon: "../src/assets/settings_icon.png",
-      title: "Uber Eats",
-      date: "Jan 10, 2024",
-      value: "$25.75",
-      status: "Pending",
-      atm: "123*********",
-      remark: "Service",
-    },
-    {
-      icon: "../src/assets/profile_icon.png",
-      title: "Bank Transfer",
-      date: "Jan 5, 2024",
-      value: "$1000.00",
-      status: "Failed",
-      atm: "123*********",
-      remark: "Transfer",
-    },
-  ];
-
   return (
-    <div className="p-2 w-full">
-      <List
-        title="Last Transactions"
-        data={lastTransactions}
-        keyMap={{
-          icon: "icon",
-          title: "title",
-          date: "date",
-          value: "value",
-          status: "status",
-          remark: "remark",
-          atm: "atm",
-        }}
-        renderItem={(item) => (
-          <div className="flex items-center  gap-4 w-full">
-            <img
-              src={item.icon}
-              alt="icon"
-              className="w-10 h-10 sm:w-12 sm:h-12 -ml-4"
-            />
+    <div className="p-2 w-full min-w-fit  max-w-full">
+      <h1 className="text-lg font-semibold text-[#232323] mb-4">Last Transaction</h1>
 
-            <div className="flex-1 min-w-0 mr-6">
-              <h3 className="text-[#232323] font-medium text-sm sm:text-lg truncate">
-                {item.title}
-              </h3>
-              <span className="text-[#718EBF] text-xs sm:text-sm font-medium ">
-                {item.date}
-              </span>
+      <div className="p-3 w-full bg-white rounded-3xl shadow-md">
+        {transactions.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 py-2 px-2"
+          >
+            <div className="flex items-center gap-4">
+              <div className={`w-12 h-12 flex items-center justify-center rounded-xl`}>
+                <img src={item.icon} alt={item.title} className="w-12 h-12" />
+              </div>
+              <div className="min-w-0 ">
+                <h3 className="text-sm font-semibold text-[#232323] truncate">{item.title}</h3>
+                <span className="text-xs text-[#718EBF]">{item.date}</span>
+              </div>
             </div>
-
-            <span className="text-[#718EBF] text-sm sm:text-base font-semibold mr-4">
-              {item.remark}
-            </span>
-            <span className="text-[#718EBF] text-sm sm:text-base font-semibold mr-4">
-              {item.atm}
-            </span>
-            <span className="font-semibold text-[#718EBF] text-sm sm:text-base mr-4">
-              {item.value}
-            </span>
-
-            <span
-              className={`px-2 py-1 rounded-full text-xs sm:text-sm whitespace-nowrap ${
-                item.status === "Completed"
-                  ? "bg-green-100 text-green-700"
-                  : item.status === "Pending"
-                  ? "bg-yellow-100 text-yellow-700"
-                  : "bg-red-100 text-red-700"
-              }`}
-            >
-              {item.status}
-            </span>
+            <div className="hidden lg:flex flex-1 justify-center text-sm text-[#718EBF]">{item.category}</div>
+            <div className="hidden lg:flex flex-1 justify-center text-sm text-[#718EBF]">{item.card}</div>
+            <div className="flex items-center gap-4 ">
+              <span className="hidden lg:inline-block text-sm font-medium text-[#718EBF]">{item.status}</span>
+              <span className={`text-sm font-semibold ${item.valueColor}`}>{item.value}</span>
+            </div>
           </div>
-        )}
-      />
+        ))}
+      </div>
     </div>
   );
 };
