@@ -1,0 +1,40 @@
+// dummyBankData.ts
+export interface BankData{key:string;name:string;balance:string;icon:string;}
+export interface BeneficiaryAccount { id: string;accountNumber:string;bankName:string;fullName:string;balance?:string;};
+export const bankData:BankData[]=[
+  { key:"access-bank",name:"Access Bank",balance:"$12,000",icon:"/access-bank.png"},
+  { key:"zenith-bank",name:"Zenith Bank",balance:"$8,500",icon:"/zenith-bank.png"},
+  { key:"guaranty-trust-bank",name:"Guaranty Trust Bank",balance:"$15,250",icon:"/guaranty-trust-bank.png"},
+  { key:"united-bank-for-frica",name:"United Bank For Africa",balance:"$9,750",icon:"/uba.png"},
+  { key:"first-bank-of-nigeria",name:"First Bank Of Nigeria",balance:"$11,300",icon:"/firstbank.png"},
+  { key:"union-bank-of-nigeria",name:"Union Bank of Nigeria",balance:"$7,200",icon:"/union-bank.png"},
+  { key:"stanbic-ibtc-bank",name:"Stanbic IBTC Bank",balance:"$13,500",icon:"/stanbic-ibtc.png"},
+  { key:"first-city-monument-bank",name:"First City Monument Bank",balance:"$10,600",icon:"/fcmb.png"},
+];
+export const beneficiaryData: BeneficiaryAccount[] = [
+  { id: "acc1", accountNumber: "0123456789", bankName: "access-bank", fullName: "Adebayo Ogunlesi" },
+  { id: "acc2", accountNumber: "9876543210", bankName: "zenith-bank", fullName: "Chioma Eze" },
+  { id: "acc3", accountNumber: "9049876543", bankName: "opay", fullName: "Kazeem Okafor" },
+  { id: "acc4", accountNumber: "9049876544", bankName: "palmpay", fullName: "Kazeem Okafor" },
+  { id: "acc5", accountNumber: "4567890123", bankName: "guaranty-trust-bank", fullName: "Emeka Okonkwo" },
+  { id: "acc6", accountNumber: "7677890123", bankName: "first-bank", fullName: "Emeka Okonkwo" },
+  { id: "acc7", accountNumber: "3210987654", bankName: "first-bank", fullName: "Folake Johnson" },
+  { id: "acc8", accountNumber: "7890123456", bankName: "uba", fullName: "Ibrahim Musa" },
+  { id: "acc9", accountNumber: "2109876543", bankName: "fidelity-bank", fullName: "Ngozi Okafor" },
+  { id: "acc10", accountNumber: "6543210987", bankName: "stanbic-ibtc", fullName: "Oluwaseun Adebayo" },
+  { id: "acc11", accountNumber: "8901234567", bankName: "union-bank", fullName: "Tunde Lawal" },
+  { id: "acc12", accountNumber: "5432109876", bankName: "ecobank", fullName: "Amina Lawal" },
+  { id: "acc13", accountNumber: "1098765432", bankName: "polaris-bank", fullName: "Chinedu Nwachukwu" },
+  { id: "acc14", accountNumber: "6789012345", bankName: "keystone-bank", fullName: "Bimpe Alabi" },
+  { id: "acc15", accountNumber: "4321098765", bankName: "wema-bank", fullName: "Yusuf Bello" },
+  { id: "acc16", accountNumber: "9012345678", bankName: "sterling-bank", fullName: "Funke Akindele" },
+  { id: "acc17", accountNumber: "8765432109", bankName: "heritage-bank", fullName: "Kolawole Adeyemi" },
+  { id: "acc18", accountNumber: "3456789012", bankName: "fcmb", fullName: "Adaeze Uche" },
+  { id: "acc19", accountNumber: "2345678901", bankName: "standard-chartered", fullName: "Grace Adebayo" },
+  { id: "acc20", accountNumber: "3456789012", bankName: "jaiz-bank", fullName: "Musa Abdullahi" },
+  { id: "acc21", accountNumber: "4567890123", bankName: "suntrust-bank", fullName: "Esther Oladipo" },
+  { id: "acc22", accountNumber: "5678901234", bankName: "providus-bank", fullName: "Samuel Chukwuma" },
+  { id: "acc23", accountNumber: "6789012345", bankName: "rand-merchant-bank", fullName: "Nneka Obi" },
+  { id: "acc24", accountNumber: "7890123456", bankName: "unity-bank", fullName: "Peter Okeke" },
+  { id: "acc25", accountNumber: "8901234567", bankName: "titan-trust-bank", fullName: "Juliet Eze" },
+];

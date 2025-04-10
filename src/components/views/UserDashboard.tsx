@@ -2,7 +2,6 @@ import React from "react";
 import UserDashboardRecentTransaction from "../../pages/Users/UserDashboardRecentTransaction";
 import BarChartComponent from "../charts/BarChartComponent";
 import MonochromePieChart from "../charts/MonochromePieChart";
-import QuickTransfer from "../../pages/Users/QuickTransfer";
 import { AtmCardList, AtmCardProps } from "../../pages/Users/AtmCardList";
 import BalanceHistoryChart from "../../pages/Users/BalanceHistoryChart";
 
@@ -50,7 +49,7 @@ const UserDashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <QuickTransfer />
+       
         <BalanceHistoryChart />
       </div>
     </div>

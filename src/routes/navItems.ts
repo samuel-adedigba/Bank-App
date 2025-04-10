@@ -43,6 +43,13 @@ const navItems: NavItemType[] = [
     roles:  [ROLES.USER],
   },
   {
+    key: "Transfer",
+    name: "Transfer",
+    path: "/transfer",
+    icon: IoPersonSharp ,
+    roles:  [ROLES.USER],
+  },
+  {
     key: "BankManager",
     name: "Dashboard",
     path: "/manager",

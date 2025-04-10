@@ -22,24 +22,7 @@ const atmCardData: AtmCardProps[] = [
 
 const Transaction = () => {
   return (
-    <div>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
-          <div>
-             <AtmCardList data={atmCardData} />
-          </div>
-            <div className='w-full' >
-                 <Expense />
-            </div>
-           
-        </div> */}
-      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
-      <div className="col-span-2 w-full lg:w-fit">
-      <AtmCardList data={atmCardData} view="See All" />
-      </div>
-      <div className="col-span-1">
-      <Expense />
-      </div>
-    </div> */}
+    <div className="p-" >
       <div className="flex flex-col md:flex-row gap-6">
         <div className="w-screen md:w-1/2 ">
           <AtmCardList data={atmCardData} view="See All" />
@@ -48,7 +31,7 @@ const Transaction = () => {
           <Expense />
         </div>
       </div>
-        <div className="">
+       <div className="container">
            <RecentTransactions />
         </div>
      

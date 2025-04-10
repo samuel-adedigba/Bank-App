@@ -16,6 +16,7 @@ import React, {
     flexRender,
     ColumnDef,
     ColumnSort,
+    CellContext,
   } from "@tanstack/react-table";
   import Loading from "../UI/Loading";
   
@@ -116,7 +117,7 @@ import React, {
               onChange={table.getToggleAllRowsSelectedHandler()}
             />
           ),
-          cell: ({ row }) => (
+          cell: ({ row }: CellContext<T, unknown>) => (
             <input
               type="checkbox"
               checked={row.getIsSelected()}
@@ -252,15 +253,16 @@ import React, {
           </div>
         )}
         {/* Table container for horizontal scrolling */}
-        <div className="overflow-x-auto w-full  ">
-          <table className="min-w-full text-left border-collapse ">
-            <thead className="bg-gray-50">
+        <div className="overflow-auto w-full  scrollbar-hide ">
+        {/* <table className="w-full min-w-[900px] text-left border-collapse"> */}
+        <table className="w-full min-w-[600px]">
+            <thead className="bg-gray-50 ">
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id} className="border-b">
                   {headerGroup.headers.map((header) => (
                     <th
                       key={header.id}
-                      className="px-4 py-3 text-[#718EBF] min-w-[150px] whitespace-nowrap"
+                      className="px-4 py-3 text-[#718EBF] min-w-[200px] whitespace-nowrap uppercase"
                       onClick={header.column.getToggleSortingHandler()}
                     >
                       {header.isPlaceholder
@@ -277,7 +279,7 @@ import React, {
                 </tr>
               ))}
             </thead>
-            <tbody className="text-base ">
+            <tbody className="text-base capitalize">
               {loading ? (
                 <tr>
                   <td colSpan={columns.length} className="text-center py-4">

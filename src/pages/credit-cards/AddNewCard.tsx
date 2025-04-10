@@ -3,6 +3,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Card from "../../components/UI/Atm-Card"; // Reusing your Card component
 import TextInput from "../../components/UI/TextInput";
+import Loading from "../../components/UI/Loading";
 
 // Reusable Input Component
 
@@ -64,6 +65,7 @@ const AddNewCard: React.FC = () => {
                   />
                   <TextInput
                     label="Expiration Date"
+                    type="date"
                     name="expirationDate"
                     placeholder="25 January 2025"
                     isDropdown
@@ -75,7 +77,7 @@ const AddNewCard: React.FC = () => {
                   className="w-40 h-[50px] bg-[#1814f3] rounded-[9px] text-white text-lg font-medium mt-6"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Adding..." : "Add Card"}
+                  {isSubmitting ? <Loading /> : "Add Card"}
                 </button>
               </Form>
             )}

@@ -15,6 +15,12 @@ export const privateRoutes =[
         allowedRoles: [ROLES.USER],
     },
     {
+        key: 'Transfer',
+        path: '/transfer',
+       component: lazy(() => import("../components/views/Transfer")),
+        allowedRoles: [ROLES.USER],
+    },
+    {
         key: 'transaction',
         path: '/transaction',
        // component: UserDashboard,
