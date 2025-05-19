@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
   const userRole = useAppSelector((state) => state.auth.user?.role);
 
-  const isMobileRole = userRole === "user" || userRole === "support";
+  const isMobileRole = userRole?.includes("user") || userRole?.includes("support");
 
   const toggleSidebar = useCallback(() => setIsSidebarOpen((prev) => !prev), []);
   const closeSidebar = useCallback(() => setIsSidebarOpen(false), []);

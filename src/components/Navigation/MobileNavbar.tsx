@@ -2,7 +2,7 @@
 import React, { memo } from "react";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { Home, Wallet, Plus, Settings, User } from "lucide-react";
+import { Home, Wallet, Plus, User } from "lucide-react";
 import { IoStatsChartSharp } from "react-icons/io5";
 import { useAppSelector } from "../../store/hook"; 
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ const MobileNavbar: React.FC = () => {
 
   const userRole = useAppSelector((state) => state.auth.user?.role);
 
-  if (userRole !== "user" && userRole !== "support") {
+  if (!userRole?.includes("user") && !userRole?.includes("support")) {
     return null;
   }
 

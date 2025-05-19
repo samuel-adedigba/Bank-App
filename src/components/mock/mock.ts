@@ -1,7 +1,7 @@
 import { belongsTo, createServer, hasMany, Model, JSONAPISerializer } from 'miragejs'
 import { signInUserData } from './data/authData'
 import authFakeApi from './fakeApi/authFakeApi'
-import transactionFakeApi from './fakeApi/transactionFakeApi'
+// import transactionFakeApi from './fakeApi/transactionFakeApi'
 
 
 export function makeServer() {
@@ -43,7 +43,7 @@ export function makeServer() {
 
 
             authFakeApi(this)
-            transactionFakeApi(this)
+            // transactionFakeApi(this)
         },
     })
 }

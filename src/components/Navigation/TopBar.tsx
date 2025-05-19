@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { FaBell } from "react-icons/fa";
-import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 // const formatPathName = (path: string) => {
 //   return (
@@ -13,9 +13,10 @@ import { Link, useLocation } from "react-router-dom";
 // };
 
 interface TopBarProps {
-  isSidebarOpen: boolean;
+  isSidebarOpen?: boolean;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const TopBar: React.FC<TopBarProps> = ({ isSidebarOpen }) => {
   // const location = useLocation();
   // const pageTitle = formatPathName(location.pathname);

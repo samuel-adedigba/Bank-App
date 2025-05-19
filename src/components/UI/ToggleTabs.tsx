@@ -61,4 +61,3 @@ export function ToggleTabs<T extends string>({ tabs, selectedKey, onChange }: To
   );
 }
 
-// export default ToggleTabs;
