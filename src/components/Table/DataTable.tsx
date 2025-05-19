@@ -253,7 +253,7 @@ import React, {
           </div>
         )}
         {/* Table container for horizontal scrolling */}
-        <div className="overflow-auto w-full  scrollbar-hide ">
+        <div className="overflow-auto min-w-full  scrollbar-hide ">
         {/* <table className="w-full min-w-[900px] text-left border-collapse"> */}
         <table className="w-full min-w-[600px]">
             <thead className="bg-gray-50 ">

@@ -1,50 +1,62 @@
-// TopBar.tsx
-import React from "react";
+import React, { memo } from "react";
 import { FaBell } from "react-icons/fa";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
+
+// const formatPathName = (path: string) => {
+//   return (
+//     path
+//       .replace("/", "")
+//       .replace(/-/g, " ")
+//       .replace(/\b\w/g, (char) => char.toUpperCase()) || "Dashboard"
+//   );
+// };
 
 interface TopBarProps {
   isSidebarOpen: boolean;
 }
 
-const formatPathName = (path: string) => {
-  return path
-    .replace("/", "") // Remove the leading slash
-    .replace(/-/g, " ") // Replace hyphens with spaces
-    .replace(/\b\w/g, (char) => char.toUpperCase()) || "Dashboard"; // Capitalize first letter of each word
-};
-const TopBar: React.FC<TopBarProps> = () => {
-  const location = useLocation();
-  const pageTitle = formatPathName(location.pathname);
+const TopBar: React.FC<TopBarProps> = ({ isSidebarOpen }) => {
+  // const location = useLocation();
+  // const pageTitle = formatPathName(location.pathname);
   return (
     <header
-      className={`fixed top-0 left-0 bg-white z-40  md:left-64 w-full md:w-[calc(100%-16rem)]  h-16 text-gray-900 flex items-center justify-between px-6 shadow-md  transition-all`}
-    >
-      <h1 className="text-2xl ml-16 md:ml-0 font-bold mt-2"> {pageTitle} </h1>
-      <div className="flex items-center gap-4">
-        <div className="relative hidden md:block">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="text-black rounded-full px-4 py-2 pl-10 border border-gray-300 shadow-sm focus:outline-none focus:ring-1 focus:ring-black"
-          />
-          <AiOutlineSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-        </div>
-
-        <button className="relative p-2 rounded-full hover:bg-gray-300">
-          <FaBell size={20} />
-          <span className="absolute top-1 right-1 bg-red-500 w-3 h-3 rounded-full">  </span>
-        </button>
-
-        <Link to="/profile">
-          <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
-            <span className="text-sm font-semibold text-white">U</span>
-          </div>
-        </Link>
+    className="
+      fixed top-0 left-0 z-40 
+      w-full md:left-64 md:w-[calc(100%-16rem)] 
+      h-16 bg-white shadow-md 
+      flex items-center justify-between 
+      px-4 md:px-6
+      transition-all
+    "
+  >
+    <div className="flex items-center space-x-4"> 
+      <div className=" flex items-center bg-gray-200 rounded-full p-2  w-full">
+        <AiOutlineSearch className="text-gray-400 mr-4" size={25} />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="w-full bg-transparent text-base focus:outline-none"
+        />
       </div>
-    </header>
+    </div>
+
+    <div className="flex items-center space-x-4">
+      <button className="relative p-2 rounded-full hover:bg-gray-100 focus:outline-none">
+        <FaBell size={25} className="text-gray-600" />
+
+        <span className="absolute top-0 right-0 block w-2 h-2 bg-red-500 rounded-full ring-1 ring-white" />
+      </button>
+
+      <Link to="/setting" className="block">
+
+        <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+          <img src="/avatar.png" alt="" />
+        </div>
+      </Link>
+    </div>
+  </header>
   );
 };
 
-export default TopBar;
+export default memo(TopBar);

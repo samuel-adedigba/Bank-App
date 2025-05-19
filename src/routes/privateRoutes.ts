@@ -8,6 +8,20 @@ export const privateRoutes =[
         allowedRoles: [ROLES.ADMIN_Support],
     },
     {
+        key: 'homepage',
+        path: '/home',
+       // component: UserDashboard,
+       component: lazy(() => import("../components/views/HomePage")),
+        allowedRoles: [ROLES.USER],
+    },
+    // {
+    //     key: 'timeline-transaction',
+    //     path: '/timeline-transaction',
+    //    // component: UserDashboard,
+    //    component: lazy(() => import("../pages/Users/TimelineTransaction")),
+    //     allowedRoles: [ROLES.USER],
+    // }, 
+    {
         key: 'userDashboard',
         path: '/user',
        // component: UserDashboard,
@@ -28,10 +42,31 @@ export const privateRoutes =[
         allowedRoles: [ROLES.USER],
     },
     {
+        key: 'transaction-history',
+        path: '/transaction-history',
+       // component: UserDashboard,
+       component: lazy(() => import("../pages/Transaction/TransactionsTablePage")),
+        allowedRoles: [ROLES.USER],
+    },
+    {
+        key: 'analytics',
+        path: '/analytics',
+       // component: UserDashboard,
+       component: lazy(() => import("../components/views/Analytics")),
+        allowedRoles: [ROLES.USER],
+    },
+    {
         key: 'Accounts',
         path: "/accounts",
         // component: SuperAdminDashboard,
         component: lazy(() =>import("../components/views/Accounts")),
+        allowedRoles:[ROLES.USER],
+    },
+    {
+        key: 'AccountAndCardPage',
+        path: "/accounts-card",
+        // component: SuperAdminDashboard,
+        component: lazy(() =>import("../pages/Accounts/AccountAndCardPage")),
         allowedRoles:[ROLES.USER],
     },
     {
@@ -69,5 +104,18 @@ export const privateRoutes =[
    component: lazy(() => import("../components/views/Settings")),
     allowedRoles: [ROLES.USER],
 },
-  
+{
+    key: 'message-list',
+    path: "/messages",
+   // component: BankManager,
+   component: lazy(() => import("../pages/Messages/MessageList")),
+    allowedRoles: [ROLES.USER],
+},
+{
+    key: 'message-chatbox',
+    path: "/message/:id",
+   // component: BankManager,
+   component: lazy(() => import("../pages/Messages/MessageChatBox")),
+    allowedRoles: [ROLES.USER],
+},
 ]
