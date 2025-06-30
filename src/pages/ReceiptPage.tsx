@@ -1,16 +1,8 @@
 import React from 'react';
-
-/**
- * Universal data structures for any type of receipt or bill
- */
 export interface ReceiptItem {
-  /** Label or description of the line item */
   label: string;
-  /** Numeric amount (in dollars, cents, etc.) */
-  amount: number;
-  /** Whether to render a dashed separator above this item */
+    amount: number;
   dashed?: boolean;
-  /** Whether this line should be highlighted (e.g. title or total) */
   highlighted?: boolean;
 }
 
@@ -27,47 +19,15 @@ export interface ReceiptMeta {
 }
 
 export interface ReceiptDataType {
-  /** Top-level title (e.g. "All the Bills") */
-  title: string;
-  /** Customer or recipient metadata */
-  meta: ReceiptMeta;
-  /** Optional billing period */
+    title: string;
+      meta: ReceiptMeta;
   period?: ReceiptPeriod;
-  /** Line-items of the bill */
-  items: ReceiptItem[];
-  /** Label for the total row (e.g. "TOTAL") */
+    items: ReceiptItem[];
   totalLabel?: string;
-  /** Grand total amount */
   total: number;
 }
 
-/**
- * Example dummy data for an electric bill
- */
-// export const dummyReceipt: ReceiptDataType = {
-//   title: 'All the Bills',
-//   meta: {
-//     name: 'Jackson Maine',
-//     address: '403 East 4th Street, Santa Ana',
-//     phone: '+8424599721',
-//     code: '#2343543',
-//   },
-//   period: {
-//     from: '01/10/2019',
-//     to: '01/11/2019',
-//   },
-//   items: [
-//     { label: 'Electric fee', amount: 470, dashed: true },
-//     { label: 'Tax', amount: 10 },
-//   ],
-//   totalLabel: 'TOTAL',
-//   total: 480,
-// };
-
-/**
- * Page component that renders a receipt/bill based on passed-in data
- */
-const ReceiptPage: React.FC<{ receipt: ReceiptData }> = ({ receipt }) => {
+const ReceiptPage: React.FC<{ receipt: ReceiptDataType }> = ({ receipt }) => {
   const { title, meta, period, items, totalLabel = 'Total', total } = receipt;
 
   return (

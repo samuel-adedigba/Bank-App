@@ -1,4 +1,4 @@
-import { belongsTo, createServer, hasMany, Model, JSONAPISerializer } from 'miragejs'
+import { createServer, hasMany, Model, JSONAPISerializer } from 'miragejs'
 import { signInUserData } from './data/authData'
 import authFakeApi from './fakeApi/authFakeApi'
 // import transactionFakeApi from './fakeApi/transactionFakeApi'

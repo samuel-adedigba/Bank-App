@@ -20,12 +20,10 @@ interface Props {
 }
 
 const QuickTransfer: React.FC<Props> = ({ isOpen, onClose, }) => {
-
-// const QuickTransfer: React.FC = () => {
   const [selectedBank, setSelectedBank] = useState<string>("");
   const [accountBalance, setAccountBalance] = useState<number>(0);
   const [beneficiaryFullName, setBeneficiaryFullName] = useState<string>("");
-  const [beneficiaryBank, setBeneficiaryBank] = useState<string>("");
+  const [beneficiaryBank, setBeneficiaryBank] = useState<string | number>("");
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [openDateModal, setDateModal] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
